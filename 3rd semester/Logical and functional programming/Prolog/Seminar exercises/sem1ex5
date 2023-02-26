@@ -1,0 +1,7 @@
+% Sum of elements in a list
+
+sumE([], [], 0).
+
+sumE([H|T], [H|RT], S) :-
+    sumE(T,RT,SP),
+    S is SP + H.

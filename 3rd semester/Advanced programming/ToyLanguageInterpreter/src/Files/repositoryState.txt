@@ -1,0 +1,718 @@
+Execution stack: 
+(string varf;(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+string varf
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+varf=src/Files/test.in
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+OpenReadFile(varf)
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+int varc
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+print(varc)
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+print(varc)
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+src/Files/test.in -> java.io.BufferedReader@3eb07fd3
+
+Execution stack: 
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+
+Execution stack: 
+(bool a;(int v;(a=true;((IF(a) THEN(v=2)ELSE(v=3));print(v)))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+bool a
+(int v;(a=true;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+(int v;(a=true;((IF(a) THEN(v=2)ELSE(v=3));print(v))))
+Symbol table: 
+a -> false
+Output list: 
+File table: 
+
+Execution stack: 
+int v
+(a=true;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+Symbol table: 
+a -> false
+Output list: 
+File table: 
+
+Execution stack: 
+(a=true;((IF(a) THEN(v=2)ELSE(v=3));print(v)))
+Symbol table: 
+a -> false
+v -> 0
+Output list: 
+File table: 
+
+Execution stack: 
+a=true
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+Symbol table: 
+a -> false
+v -> 0
+Output list: 
+File table: 
+
+Execution stack: 
+((IF(a) THEN(v=2)ELSE(v=3));print(v))
+Symbol table: 
+a -> true
+v -> 0
+Output list: 
+File table: 
+
+Execution stack: 
+(IF(a) THEN(v=2)ELSE(v=3))
+print(v)
+Symbol table: 
+a -> true
+v -> 0
+Output list: 
+File table: 
+
+Execution stack: 
+print(v)
+Symbol table: 
+a -> true
+v -> 2
+Output list: 
+File table: 
+
+Execution stack: 
+Symbol table: 
+a -> true
+v -> 2
+Output list: 
+2
+File table: 
+
+Execution stack: 
+(string varf;(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+string varf
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+varf=src/Files/test.in
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+OpenReadFile(varf)
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+int varc
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+print(varc)
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+print(varc)
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+src/Files/test.in -> java.io.BufferedReader@1de0aca6
+
+Execution stack: 
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+
+Execution stack: 
+(string varf;(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+string varf
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+varf=src/Files/test.in
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+OpenReadFile(varf)
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+int varc
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+print(varc)
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+print(varc)
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+src/Files/test.in -> java.io.BufferedReader@255316f2
+
+Execution stack: 
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+
+Execution stack: 
+(string varf;(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+string varf
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+Output list: 
+File table: 
+
+Execution stack: 
+(varf=src/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+varf=src/Files/test.in
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> null
+Output list: 
+File table: 
+
+Execution stack: 
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+OpenReadFile(varf)
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+
+Execution stack: 
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+int varc
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 0
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+print(varc)
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 32
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+print(varc)
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+src/Files/test.in -> java.io.BufferedReader@446cdf90
+
+Execution stack: 
+Symbol table: 
+varf -> src/Files/test.in
+varc -> 675
+Output list: 
+32
+675
+File table: 
+

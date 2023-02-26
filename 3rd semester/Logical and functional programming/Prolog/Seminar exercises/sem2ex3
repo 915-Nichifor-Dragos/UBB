@@ -1,0 +1,21 @@
+% Delete all the strictly increasing sequences
+
+removeInc([], []).
+
+removeInc([H], [H]).
+
+removeInc([H1,H2], []) :- H1 < H2.
+
+removeInc([H1,H2,H3|T], R) :-
+    H1 < H2,
+    H2 < H3,
+    removeInc([H2,H3|T], R).
+
+removeInc([H1,H2,H3|T], R) :-
+    H1 < H2,
+    H2 >= H3,
+    removeInc([H3|T], R).
+
+removeInc([H1,H2|T], [H1|R]) :-
+    H1 >= H2,
+    removeInc([H2|T], R).

@@ -1,0 +1,57 @@
+% You are given a heterogeneous list, composed of numbers and lists of numbers. You will have to 
+% remove the odd numbers from the sublists that have a mountain aspect (a list has a mountain 
+% aspect if it is made of an increasing sequence of numbers, followed by a decreasing sequence of 
+% numbers).
+
+mountain([H1,H2]) :- H1 > H2.
+
+mountain([H1,H2,H3|T]) :-
+    H1 < H2,
+    H2 < H3,
+    mountain([H2,H3|T]).
+
+mountain([H1,H2,H3|T]) :-
+    H1 < H2,
+    H2 > H3,
+    mountain([H2,H3|T]).
+
+mountain([H1,H2,H3|T]) :-
+    H1 > H2,
+    H2 > H3,
+    mountain([H2,H3|T]).
+
+mainM(L) :-
+    L = [H1,H2|_],
+    H1 < H2,
+    mountain(L).
+
+% ---------------------------
+
+removeOdd([], []).
+
+removeOdd([H|T], [H|R]) :-
+    H mod 2 =:= 0,
+    removeOdd(T, R).
+
+removeOdd([H|T], R) :-
+    H mod 2 =:= 1,
+    removeOdd(T, R).
+
+% ---------------------------
+
+removeAllList([], []).
+
+removeAllList([H|T], [R|RT]) :-
+    is_list(H),
+    mainM(H),
+    removeOdd(H, R),
+    removeAllList(T, RT).
+
+removeAllList([H|T], [H|RT]) :-
+    is_list(H),
+    not(mainM(H)),
+    removeAllList(T, RT).
+
+removeAllList([H|T], [H|RT]) :-
+    not(is_list(H)),
+    removeAllList(T, RT).

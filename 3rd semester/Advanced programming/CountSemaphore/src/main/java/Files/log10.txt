@@ -1,0 +1,648 @@
+Program id: 0
+Execution stack: 
+(Ref(int) v1;(int cnt;(New(v1, 1);(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))))))))
+Symbol table: 
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+Ref(int) v1
+(int cnt;(New(v1, 1);(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))))))
+Symbol table: 
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+(int cnt;(New(v1, 1);(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))))))
+Symbol table: 
+v1 -> (0, int)
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+int cnt
+(New(v1, 1);(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))))))
+Symbol table: 
+v1 -> (0, int)
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+(New(v1, 1);(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))))))
+Symbol table: 
+cnt -> 0
+v1 -> (0, int)
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+New(v1, 1)
+(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))))
+Symbol table: 
+cnt -> 0
+v1 -> (0, int)
+Output list: 
+File table: 
+Heap: 
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+(createSemaphore(cnt, ReadHeap(v1));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))))
+Symbol table: 
+cnt -> 0
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+createSemaphore(cnt, ReadHeap(v1))
+(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))))
+Symbol table: 
+cnt -> 0
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+
+Program id: 0
+Execution stack: 
+(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))));(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))))
+(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+(Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))));(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 1
+Execution stack: 
+(Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+Fork((Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))))
+(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 1
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+(Acquire(cnt);(print(ReadHeap(v1) - 1);release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+(WriteHeap(v1, ReadHeap(v1) * 10);(print(ReadHeap(v1));release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 2
+Execution stack: 
+(Acquire(cnt);(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt)))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 0
+Execution stack: 
+Acquire(cnt)
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+WriteHeap(v1, ReadHeap(v1) * 10)
+(print(ReadHeap(v1));release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 1
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 0
+Execution stack: 
+Acquire(cnt)
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+(print(ReadHeap(v1));release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 0
+Execution stack: 
+Acquire(cnt)
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+print(ReadHeap(v1))
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 0
+Execution stack: 
+Acquire(cnt)
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [1])
+
+Program id: 1
+Execution stack: 
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+Acquire(cnt)
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [])
+
+Program id: 0
+Execution stack: 
+(print(ReadHeap(v1) - 1);release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 0
+Execution stack: 
+print(ReadHeap(v1) - 1)
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 0
+Execution stack: 
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 2
+Execution stack: 
+Acquire(cnt)
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [0])
+
+Program id: 0
+Execution stack: 
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+(WriteHeap(v1, ReadHeap(v1) * 10);(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt))))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+WriteHeap(v1, ReadHeap(v1) * 10)
+(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 10
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+(WriteHeap(v1, ReadHeap(v1) * 2);(print(ReadHeap(v1));release(cnt)))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 100
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+WriteHeap(v1, ReadHeap(v1) * 2)
+(print(ReadHeap(v1));release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 100
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+(print(ReadHeap(v1));release(cnt))
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 200
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+print(ReadHeap(v1))
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+File table: 
+Heap: 
+1 -> 200
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+release(cnt)
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+200
+File table: 
+Heap: 
+1 -> 200
+Semaphore Table: 
+1 -> (1, [2])
+
+Program id: 2
+Execution stack: 
+Symbol table: 
+cnt -> 1
+v1 -> (1, int)
+Output list: 
+10
+9
+200
+File table: 
+Heap: 
+1 -> 200
+Semaphore Table: 
+1 -> (1, [])
+

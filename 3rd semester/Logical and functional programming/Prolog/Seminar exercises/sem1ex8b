@@ -1,0 +1,12 @@
+% Deletes all elements E from list L
+
+deleteAll(_, [], []).
+
+deleteAll(E, [H|T], R) :-
+    E =:= H,
+    deleteAll(E, T, R).
+
+deleteAll(E, [H|T], R) :-
+    E =\= H,
+    deleteAll(E, T, RT),
+    R = [H|RT].

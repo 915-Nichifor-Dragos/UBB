@@ -1,0 +1,51 @@
+
+% getMax(i, i, o)
+% getMax(L - list, C - current maximum, R - global maximum)
+
+% Mathematical model:
+% getMax(l1,l2...ln, C, R) -> getMax(l2,l3...ln, l1, R) if l1 > C
+%                          -> getMax(l2,l3...ln, C, R) if l1 < C
+%                          -> R = C if L is empty
+
+getMax([], C, C).
+
+getMax([H|T], C, R) :-
+    H > C,
+    getMax(T, H, R).
+
+getMax([H|T], C, R) :-
+    H =< C,
+    getMax(T, C, R).
+
+
+% replaceOccurrences(i, o)
+% replaceOccurrences(L - list, R - resulted list)
+
+% Mathematical model:
+% replaceOccurrences(l1,l2...ln, [], max(l), number) -> replaceOccurrences(l1,l2...ln, [number, ...], max(l), number) if l1 = max(l)
+%                                                    -> replaceOccurrences(l1,l2...ln, [l1, ...], max(l), number) if l1 != max(l)
+
+replaceOccurrences([], [], _, _).
+
+replaceOccurrences([H|T], [H|R], Max, Number) :-
+    H =\= Max,
+    replaceOccurrences(T, R, Max, Number).
+
+replaceOccurrences([H|T], [Number|R], Max, Number) :-
+    H =:= Max,
+    replaceOccurrences(T, R, Max, Number).
+
+
+% replaceOccurrencesMain(i, o, i)
+% replaceOccurrencesMain(L - list, R - resulted list, Number - integer)
+
+
+replaceOccurrencesMain([], [], _).
+
+replaceOccurrencesMain(L, R, Number) :-
+    getMax(L, 0, Max),
+    replaceOccurrences(L, R, Max, Number).
+
+% replaceOccurrencesMain([3,6,2,4,6,1], R, 11).
+
+% L1a L1b -> ex 8 

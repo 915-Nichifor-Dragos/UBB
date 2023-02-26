@@ -1,0 +1,23 @@
+% Given a linear list, compute the greatest common divisor of all number.
+
+gcd(M, M, M).
+
+gcd(M, N, R) :-
+    M > N,
+    Y is M - N,
+    gcd(M, Y, R).
+
+gcd(M, N, R) :-
+    N > M,
+    Y is N - M,
+    gcd(Y, N, R).
+
+% ---------------------------
+
+gcdList([], _).
+
+gcdList([E], E).
+
+gcdList([H|T], R)
+    gcdLisT(T, R1)
+    gcd(H, R1, R).

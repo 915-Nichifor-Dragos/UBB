@@ -1,0 +1,54 @@
+Program id: 0
+Execution stack: 
+(int v;(v=2;print(v)))
+Symbol table: 
+Output list: 
+File table: 
+Heap: 
+
+Program id: 0
+Execution stack: 
+int v
+(v=2;print(v))
+Symbol table: 
+Output list: 
+File table: 
+Heap: 
+
+Program id: 0
+Execution stack: 
+(v=2;print(v))
+Symbol table: 
+v -> 0
+Output list: 
+File table: 
+Heap: 
+
+Program id: 0
+Execution stack: 
+v=2
+print(v)
+Symbol table: 
+v -> 0
+Output list: 
+File table: 
+Heap: 
+
+Program id: 0
+Execution stack: 
+print(v)
+Symbol table: 
+v -> 2
+Output list: 
+File table: 
+Heap: 
+
+Program id: 0
+Execution stack: 
+Symbol table: 
+v -> 2
+Output list: 
+2
+File table: 
+Heap: 
+

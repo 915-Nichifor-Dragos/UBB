@@ -1,0 +1,54 @@
+% b. For a heterogeneous list, formed from integer numbers and list of numbers, write a predicate to replace
+%    every sublist with the position of the maximum element from that sublist.
+
+% getMax(L = the list, N = max number, C = the current max number)
+% getMax(i, o)
+
+% getMax(L0,L1,...Ln , N, C) = getMax(L1,L2...Ln , N, L0), if L0 > C
+%                              getMax(L1,L2...Ln , N, C), if L0 < C
+%                              N = C, if L is empty
+
+getMax([], C, C).
+getMax([H|T], N, C) :-
+    H > C,
+    getMax(T, N, H).
+getMax([_|T], N, C) :-
+    getMax(T, N, C).
+
+
+% getMaxPositions(L = the list, R = the position list, N = the number, C = the current position)
+% getMaxPositions(i, o, i, i)
+
+% getMaxPositions(L0,L1,...Ln , R0,R1,...Rm , N, C) = getMaxPositions(L0,L1,...Ln , R0,R1,...Rm,L0 , N, C), if L0 = N
+%                                                     getMaxPositions(L0,L1,...Ln , R0,R1,...Rm , N, C), if L0 != N  
+%                                                     [] if len(L) = 0                                    
+
+getMaxPositions([], [], _, _).
+getMaxPositions([H|T], [C|R], N, C) :-
+    H =:= N,
+    C1 is C + 1,
+    getMaxPositions(T, R, N, C1).
+getMaxPositions([_|T], R, N, C) :-
+    C1 is C + 1,
+    getMaxPositions(T, R, N, C1).
+
+
+% checkMaxAndPositions(L = list, R = resulted list)
+% checkMaxAndPositions(i, o)
+
+checkMaxAndPositions([], []).
+checkMaxAndPositions(L, R) :-
+    getMax(L, N, 0),
+    getMaxPositions(L, R, N, 1).
+checkMaxAndPositions(L, L).
+
+
+% transformList(L = the list, R = resulted list)
+% transformList(i, o)
+
+% transformList(L0,L1,...Ln , R0,R1,...Rm) = transformList(L1,...Ln , R1,...Rm), where R0 will be modified by checkMaxAndPositions(L0, R0) function
+
+transformList([], []).
+transformList([H|T], [H1|R]) :-
+    checkMaxAndPositions(H, H1),
+    transformList(T, R).

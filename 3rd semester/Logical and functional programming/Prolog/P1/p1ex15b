@@ -1,0 +1,21 @@
+% b.  Write  a  predicate  to  decompose  a  list  in  a  list  respecting  the  following:  [list  of  even  numbers  list  of  odd numbers]
+%    and also return the number of even numbers and the numbers of odd numbers.
+
+% I will decompose the list into the following structure [[even numbers], [odd numbers], even numbers count, odd numbers count]
+
+decompose([], [[], [], 0, 0]).
+
+decompose([H|T], [[H|EVEN], ODD, EVENCOUNT, ODDCOUNT]) :-
+    H mod 2 =:= 0,
+    decompose(T, [EVEN, ODD, EVENCOUNT1, ODDCOUNT]),
+    EVENCOUNT is EVENCOUNT1 + 1.
+
+decompose([H|T], [EVEN, [H|ODD], EVENCOUNT, ODDCOUNT]) :-
+    H mod 2 =:= 1,
+    decompose(T, [EVEN, ODD, EVENCOUNT, ODDCOUNT1]),
+    ODDCOUNT is ODDCOUNT1 + 1.
+
+
+% decompose - [[], [], 0, 0] if n = 0, where Oddlist = Evenlist = [] and Evencount = Oddcount = 0
+%           - decompose([L2, L3 ... Ln], [Evenlist, {L1} U Oddlist, Evencount, Oddcount + 1]), if H % 2 == 1
+%           - decompose([L2, L3 ... Ln], [{L1} U Evenlist, Oddlist, Evencount + 1, Oddcount]), if H % 2 == 0

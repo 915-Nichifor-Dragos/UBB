@@ -1,0 +1,370 @@
+% ---------------------------------------------------------------------------------------
+% Compute factorial of n.
+% factorial(n) = 0, if n = 1
+%              = n * factorial(n - 1), otherwise
+
+factorial(1, 1).
+
+factorial(N, K) :-
+    N > 0,
+    N1 is N - 1,
+    factorial(N1, K1),
+    K is K1 * N.
+
+% ---------------------------------------------------------------------------------------
+% Verify the membership of an item in a list.
+% member(l1 l2...ln, E) = false, if n = 0
+%                       = true, if {l1} = E
+%                       = member(l2...ln, E), otherwise
+
+member([E|_], E).
+
+member([_|T], E) :-
+    member(T, E).
+
+% ---------------------------------------------------------------------------------------
+% Add an item at the end of a list.
+% addItemEnd(l1 l2...ln, E) = [E], if n = 0
+%                           = {l1} U addItemEnd(l2...ln, E), otherwise
+
+addItemEnd([], [E], E).
+
+addItemEnd([H|T], [H|R], E) :-
+    addItemEnd(T, R, E).
+
+% ---------------------------------------------------------------------------------------
+% Determine the inverse of a list.
+% inverse(l1 l2...ln) = [], if n = 0
+%                     = inverse(l2...ln) U {l1}, otherwise
+
+inverse([], []).
+inverse([H|T], R) :-
+    inverse(T, R1),
+    addItemEnd(R1, R, H).
+
+% ---------------------------------------------------------------------------------------
+% evenItems(l1 l2...ln) = {l1} U evenItems(l2...ln), if l1 % 2 = 0
+%                       = evenItems(l2...ln), otherwise
+
+evenItems([], []).
+
+evenItems([H|T], [H|R]) :-
+    number(H),
+    mod(H, 2) =:= 0,
+    evenItems(T, R).
+
+evenItems([_|T], R) :-
+    evenItems(T, R).
+
+% ---------------------------------------------------------------------------------------
+%  Write a predicate that concatenates two lists.
+% concatenate(l1 l2...ln, k1 k2...km) = k1 k2...km, if n = 0
+%                                     ={l1} U concatenate(l2...ln, k1 k2...km), otherwise
+
+concatenate([], K, K).
+
+concatenate([H|T], K, [H|R]) :-
+    concatenate(T, K, R).
+
+% ---------------------------------------------------------------------------------------
+%  Write a predicate that determines the list of subsets of a list represented as a set.
+% findSubset(l1,l2...ln) = [], if n = 0
+%                        = [l1 U findSubset(l2...ln)] U findSubset(l2...ln)
+
+findSubset([], []).
+
+findSubset([_|T], R) :-
+    findSubset(T, R).
+
+findSubset([H|T], [H|R]) :-
+    findSubset(T, R).
+
+findSubsetMain(L, R) :-
+    findall(X, findSubset(L, X), R).
+
+% ---------------------------------------------------------------------------------------
+%  Given a set of numbers (represented as a list), write two predicates to return all the subsets of an even / odd sum.
+% findSubsetSumEven(l1 l2...ln) = [], if n = 0
+%                               = [l1 U findSubsetSumEven(l2...ln)] U findSubsetSumEven(l2...ln), if l1 mod 2 = 0
+%                               = findSubsetSumOdd(l2...ln), if l1 mod 2 = 1
+
+findSubsetSumEven([], [], S) :-
+    mod(S, 2) =:= 0.
+
+findSubsetSumEven([_|T], R, S) :-
+    findSubsetSumEven(T, R, S).
+
+findSubsetSumEven([H|T], [H|R], S) :-
+    mod(H, 2) =:= 0,
+    !,
+    findSubsetSumEven(T, R, S).
+
+findSubsetSumEven([H|T], [H|R], S) :-
+    S1 is S + 1,
+    findSubsetSumEven(T, R, S1).
+
+% findSubsetSumOdd(l1 l2...ln) = [], if n = 0
+%                              = [l1 U findSubsetSumOdd(l2...ln)] U findSubsetSumOdd(l2...ln), if l1 mod 2 = 1
+%                              = findSubsetSumEven(l2...ln), if l1 mod 2 = 0
+
+findSubsetSumOdd([], [], S) :-
+    mod(S, 2) =:= 1.
+
+findSubsetSumOdd([_|T], R, S) :-
+    findSubsetSumOdd(T, R, S).
+
+findSubsetSumOdd([H|T], [H|R], S) :-
+    mod(H, 2) =:= 1,
+    !,
+    S1 is S + 1,
+    findSubsetSumOdd(T, R, S1).
+
+findSubsetSumOdd([H|T], [H|R], S) :-
+    findSubsetSumOdd(T, R, S).
+
+findSubsetSumEvenOdd(L, R, R2) :-
+    findall(X, findSubsetSumEven(L, X, 0), R),
+    findall(X, findSubsetSumOdd(L, X, 0), R2).
+
+% AVOID RECURSIVE CALLS
+
+% ---------------------------------------------------------------------------------------
+% minim ([A], A).
+
+% minim ([H|T], H) :-
+%   minim (T, M), 
+%   H =< M,
+%   !.
+
+% minim ([_|T], M) :-
+%   minim (T, M).
+
+minim([A], A).
+
+minim([H|T], M) :-
+    minim(T, M),
+    H > M,
+    !.
+
+minim([H|_], H).
+
+% --------
+
+aux1(H, M, H) :-
+    H =< M,
+    !.
+
+aux1(_, M, M).
+
+minim2([A], A).
+
+minim2([H|T], Rez) :-
+    minim(T, M),
+    aux1(H, M, Rez).
+
+% ---------------------------------------------------------------------------------------
+% f([E], E).
+
+% f([H | T], H) :-
+%   f(T, X), 
+%   H =< X,
+%   !.
+
+% f([_ | T], X) :-
+%   f(T, X).
+
+aux2(H, E, H) :-
+    H =< E,
+    !.
+
+aux2(_, E, E).
+
+f([E], E).
+
+f([H|T], Rez) :-
+    f(T, X),
+    aux2(H, X, Rez).
+
+% ---------------------------------------------------------------------------------------
+
+% g(1,1) :- !.
+
+% g(2,2) :- !.
+
+% g(K, X) :-
+%   K1 is K-1,
+%   g(K1, Y),
+%   Y > 1,
+%   !,
+%   X is K-2.
+
+% g(K, X) :-
+%   K1 is K-1,
+%   g(K1, X)
+
+aux3(X, Y, K) :-
+    Y > 1,
+    !,
+    X is K - 2.
+
+aux3(Y, Y, _).
+
+g(1,1) :- !.
+
+g(2,2) := !.
+
+g(K, X) :-
+    K1 is K - 1,
+    g(K1, Y),
+    aux3(X, Y, K).
+
+% ---------------------------------------------------------------------------------------
+% evenProd([], 1).
+% evenProd([H|T], R) :-
+%     H mod 2 =:= 0,
+%     evenProd(T, RT),
+%     R is H * RT.
+% evenProd([H|T], R) :-
+%     H mod 2 =\= 0,
+%     evenProd(T, R).
+
+aux4(H, H) :-
+    H mod 2 =:= 0,
+    !.
+
+aux4(_, 1).
+
+evenProd([], 1).
+
+evenProd([H|T], Rez) :-
+    evenProd(T, R),
+    aux4(H, Val),
+    Rez is R * Val.
+
+
+% ---------------------------------------------------------------------------------------
+% Write a non-deterministic predicate that generates combinations with k elements of a nonempty set represented as a list.
+% combinations(l1 l2...ln, K) = [], if k = 0
+%                             = [{l1} U combinations(l2...ln, K - 1)] U combinations(l2...ln, K), otherwise
+
+combinations([H|_], 1, [H]).
+
+combinations([_|T], K, C) :-
+    combinations(T, K, C).
+
+combinations([H|T], K, [H|C]) :-
+    K1 is K - 1,
+    combinations(T, K1, C).
+
+combinationsAll(L, K, R) :-
+    findall(C, combinations(L, K, C), R).
+
+% ---------------------------------------------------------------------------------------
+% Write a non-determinist predicate that inserts an element, in all positions, in a list.
+% insertAllPos(l1 l2...ln, e) = [l1 U insertAllPos(l2...ln, e)] U [e l1...ln]
+
+insertAllPos(L, E, [E|L]).
+
+insertAllPos([H|T], E, [H|R]) :-
+    insertAllPos(T, E, R).
+
+insertAllPosMain(L, E, R) :-
+    findall(X, insertAllPos(L, E, X), R).
+
+% ---------------------------------------------------------------------------------------
+% Write a non-deterministic predicate that deletes an element, in turn, from all the positions on which it appears in a list.
+% deleteInTurn(l1 l2...ln, e) = deleteInTurn(l2...ln, e), l1 = e
+%                             = l1 U deleteInTurn(l2...ln, e), if l1 != e
+
+deleteInTurn([E|L], E, L).
+
+deleteInTurn([H|T], E, [H|R]) :-
+    deleteInTurn(T, E, R).
+
+deleteInTurnMain(L, E, R) :-
+    findall(X, deleteInTurn(L, E, X), R).
+
+% ---------------------------------------------------------------------------------------
+% Write a non-determinist predicate that generates the permutations of a list.
+
+permutations([], []).
+
+permutations([E|T], P) :-
+    permutations(T, L),
+    insertAllPosMain(L, E, P).
+
+permutations(L, [H|T]) :-
+    deleteInTurn(Z, H, L),
+    permutations(Z, T).
+
+permutations(L, [H|T]) :-
+    insertAllPosMain(Z, H, L),
+    permutations(Z, T).
+
+permutations([E|T], P) :-
+    permutations(T, L),
+    deleteInTurn(L, E, P).
+
+
+permutationsMain(L, R) :-
+    findall(X, permutations(L, X), R).
+
+% ---------------------------------------------------------------------------------------
+% Delete the 1st element E
+
+delete1E([], [], _).
+
+delete1E([E|T], T, E).
+
+delete1E([H|T], [H|R], E) :-
+    delete1E(T, R, E).
+
+% ---------------------------------------------------------------------------------------
+% Delete all elements E
+
+deleteAllE([], [], _).
+
+deleteAllE([E|T], R, E) :-
+    deleteAllE(T, R, E).
+
+deleteAllE([H|T], [H|R], E) :-
+    deleteAllE(T, R, E).
+
+% ---------------------------------------------------------------------------------------
+% Given a list L, generate the list of all arrangements of K elements from the list.
+
+insertEveryPos(E, L, [E|L]).
+insertEveryPos(E, [H|T], [H|R]) :-
+    insertEveryPos(E, T, R).
+
+arrangements(1, [H|_], [H]).
+arrangements(K, [_|T], R) :-
+    arrangements(K, T, R).
+arrangements(K, [H|T], R) :-
+    K1 is K - 1,
+    arrangements(K1, T, RN),
+    insertEveryPos(H, RN, R).
+findAllArrangements(L, K, R) :-
+    findall(X, arrangements(K, L, X), R).
+
+% ---------------------------------------------------------------------------------------
+% Given a list L, generate the list of all combinations of K elements from the list.
+
+combinations2(1, [H|_], [H]).
+combinations2(K, [_|T], R) :-
+    combinations2(K, T, R).
+combinations2(K, [H|T], [H|R]) :-
+    K1 is K - 1,
+    combinations2(K1, T, R).
+findAllCombinations(L, K, R) :-
+    findall(X, combinations2(K, L, X), R).
+
+% ---------------------------------------------------------------------------------------
+% Given a list L, generate the list of all permutations of K elements from the list.
+
+permutations2([], []).
+permutations2([H|T], R) :-
+    permutations2(T, RN),
+    insertEveryPos(H, RN, R).
+findAllPermutations(L, R) :-
+    findall(X, permutations2(L, X), R).

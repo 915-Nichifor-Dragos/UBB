@@ -1,0 +1,13 @@
+% Compute the reverse of a number using a collector variable.
+
+inverse(0, NC, NC).
+
+inverse(N, NC, C) :-
+    N > 0,
+    Digit is N mod 10,
+    NewNC is NC * 10 + Digit,
+    NewN is N div 10,
+    inverse(NewN, NewNC, C).
+
+inverseMain(N, C) :-
+    inverse(N, 0, C).

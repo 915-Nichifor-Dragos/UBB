@@ -1,0 +1,36 @@
+% You are given a heterogeneous list, made of atoms and lists of numbers. Remove all increasing 
+% sequences of numbers from the sublists of the list. Egz, transform([[1, 2, 4, 4, 7, 9, 0, 1, 1], 3,[], 
+% 24, [], a, [12, 4], [3, 5], b],R). will result in R = [[1], 3, [], 24, [], a, [12, 4], [], b]
+% We will use predicate removeInc (seminar 2, problem 3) on a list.
+
+removeInc([], []).
+
+removeInc([H], [H]).
+
+removeInc([H1,H2], []) :- H1 < H2.
+
+removeInc([H1,H2,H3|T], R) :-
+    H1 < H2,
+    H2 < H3,
+    removeInc([H2,H3|T], R).
+
+removeInc([H1,H2,H3|T], R) :-
+    H1 < H2,
+    H2 >= H3,
+    removeInc([H3|T], R).
+
+removeInc([H1,H2|T], [H1|R]) :-
+    H1 >= H2,
+    removeInc([H2|T], R).
+
+% ---------------------------
+
+removeList([], []).
+
+removeList([H|T], [R|RT]) :-
+    is_list(H),
+    removeInc(H, R),
+    removeList(T, RT).
+
+removeList([H|T], [H|RT]) :-
+    removeList(T, RT).

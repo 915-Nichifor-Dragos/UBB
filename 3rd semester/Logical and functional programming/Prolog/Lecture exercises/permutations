@@ -1,0 +1,11 @@
+insert(E, L, [E|L]).
+insert(E, [H|T], [H|R]) :-
+    insert(E, T, R).
+
+perm([], []).
+perm([H|T], P) :-
+    perm(T, R),
+    insert(H, R, P).
+
+permMain(L, R) :-
+    findall(X, perm(L, X), R).

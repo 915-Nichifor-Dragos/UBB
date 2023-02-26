@@ -1,0 +1,232 @@
+Program id: 0
+Execution stack: 
+(string varf;(varf=src/main/java/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))))
+Symbol table: 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+string varf
+(varf=src/main/java/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(varf=src/main/java/Files/test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))))
+Symbol table: 
+varf -> 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+varf=src/main/java/Files/test.in
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+OpenReadFile(varf)
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(int varc;(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+int varc
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 0
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 0
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(print(varc);(ReadFile(varf, varc);(print(varc);CloseReadFile(varf))))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 32
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+print(varc)
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 32
+
+Output list: 
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(ReadFile(varf, varc);(print(varc);CloseReadFile(varf)))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 32
+
+Output list: 
+32
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+ReadFile(varf, varc)
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 32
+
+Output list: 
+32
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+(print(varc);CloseReadFile(varf))
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 675
+
+Output list: 
+32
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+print(varc)
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 675
+
+Output list: 
+32
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+CloseReadFile(varf)
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 675
+
+Output list: 
+32
+675
+File table: 
+src/main/java/Files/test.in -> java.io.BufferedReader@e9f3b93
+Heap: 
+Procedure table: 
+
+Program id: 0
+Execution stack: 
+Symbol table: 
+varf -> src/main/java/Files/test.in
+varc -> 675
+
+Output list: 
+32
+675
+File table: 
+Heap: 
+Procedure table: 
+

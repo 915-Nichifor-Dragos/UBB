@@ -1,0 +1,12 @@
+% Product of even numbers in a list.
+
+prodE([], [], 1).
+
+prodE([H|T], [H|RT], P) :-
+    H mod 2 =\= 0,
+    prodE(T, RT, PR),
+    P is PR * H.
+
+prodE([H|T], R, P) :-
+    H mod 2 =:= 0,
+    prodE(T, R, P).

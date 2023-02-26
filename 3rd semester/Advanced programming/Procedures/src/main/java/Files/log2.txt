@@ -1,0 +1,685 @@
+Program id: 1
+Execution stack: 
+(int v;(int w;(v=2;(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w])))))))))
+Symbol table: 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+int v
+(int w;(v=2;(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))))))
+Symbol table: 
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(int w;(v=2;(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))))))
+Symbol table: 
+v -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+int w
+(v=2;(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w])))))))
+Symbol table: 
+v -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(v=2;(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w])))))))
+Symbol table: 
+v -> 0
+w -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+v=2
+(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))))
+Symbol table: 
+v -> 0
+w -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(w=5;(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))))
+Symbol table: 
+v -> 2
+w -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+w=5
+(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w])))))
+Symbol table: 
+v -> 2
+w -> 0
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(call sum[v * 10, w];(print(v);Fork((call product[v, w];Fork(call sum[v, w])))))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+call sum[v * 10, w]
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(int v;(v=a + b;print(v)))
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+int v
+(v=a + b;print(v))
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(v=a + b;print(v))
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+v=a + b
+print(v)
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+print(v)
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+v -> 25
+
+v -> 2
+w -> 5
+
+Output list: 
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+return
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+a -> 20
+b -> 5
+v -> 25
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+(print(v);Fork((call product[v, w];Fork(call sum[v, w]))))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+print(v)
+Fork((call product[v, w];Fork(call sum[v, w])))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+Fork((call product[v, w];Fork(call sum[v, w])))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 1
+Execution stack: 
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+(call product[v, w];Fork(call sum[v, w]))
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+call product[v, w]
+Fork(call sum[v, w])
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+(int v;(v=a * b;print(v)))
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+int v
+(v=a * b;print(v))
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+(v=a * b;print(v))
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+v=a * b
+print(v)
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+print(v)
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+v -> 10
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+return
+Fork(call sum[v, w])
+Symbol table: 
+a -> 2
+b -> 5
+v -> 10
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+Fork(call sum[v, w])
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 2
+Execution stack: 
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+call sum[v, w]
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+(int v;(v=a + b;print(v)))
+return
+Symbol table: 
+a -> 2
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+int v
+(v=a + b;print(v))
+return
+Symbol table: 
+a -> 2
+b -> 5
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+(v=a + b;print(v))
+return
+Symbol table: 
+a -> 2
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+v=a + b
+print(v)
+return
+Symbol table: 
+a -> 2
+b -> 5
+v -> 0
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+print(v)
+return
+Symbol table: 
+a -> 2
+b -> 5
+v -> 7
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+return
+Symbol table: 
+a -> 2
+b -> 5
+v -> 7
+
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+7
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+
+Program id: 3
+Execution stack: 
+Symbol table: 
+v -> 2
+w -> 5
+
+Output list: 
+25
+2
+10
+7
+File table: 
+Heap: 
+Procedure table: 
+product -> Params: [a, b], Statement: (int v;(v=a * b;print(v)))
+sum -> Params: [a, b], Statement: (int v;(v=a + b;print(v)))
+

@@ -1,0 +1,16 @@
+% Sum of proper divisors of number N
+
+sumDiv(N, Div, 0) :-
+    N1 is N div 2,
+    Div > N1.
+
+sumDiv(N, Div, S) :-
+    N mod Div =:= 0,
+    DivNew is Div + 1,
+    sumDiv(N, DivNew, Sum),
+    S is Sum + Div.
+
+sumDiv(N, Div, S) :-
+    N mod Div =\= 0,
+    DivNew is Div + 1,
+    sumDiv(N, DivNew, S).

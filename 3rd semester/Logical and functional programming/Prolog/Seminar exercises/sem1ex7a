@@ -1,0 +1,14 @@
+% Insert a value on position m(m >=1) in a list (indexing starts from 1).
+
+insertE([], _, Pos, []) :- Pos > 1.
+
+insertE([], E, 1, [E]) :- M =:= 1.
+
+insertE(L, E, 1, [E|L]) :-
+    M =:=1 ,
+    R=[E|L].
+
+insertE([H|T], E, Pos, [H|RT]) :-
+    Pos > 1,
+    NewPos is Pos - 1.
+    insertE(T, E, NewPos, RT).

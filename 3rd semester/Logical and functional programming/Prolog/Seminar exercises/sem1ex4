@@ -1,0 +1,6 @@
+% Add an element at the end of the list.
+
+addE(E, [], [E]).
+
+addE(E, [H|T], [H|RT]) :-
+    addE(E, T, RT).

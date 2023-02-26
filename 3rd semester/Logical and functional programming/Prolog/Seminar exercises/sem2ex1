@@ -1,0 +1,12 @@
+% Compute number of occurrences of an element in a list.
+
+nrOcc(_, [], 0).
+
+nrOcc(E, [H|T], N) :-
+    H =:= E,
+    nrOcc(E, T, N1),
+    N is N1 + 1.
+
+nrOcc(E, [H|T], N) :-
+    H =\= E,
+    nrOcc(E, T, N).

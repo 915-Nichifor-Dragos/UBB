@@ -1,0 +1,82 @@
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex42020 ex 1.2
+
+aux(Y, K1, K1 - 1) :-
+    Y > 1,
+    !.
+aux(Y, _, Y) :-
+    Y > 0.5,
+    !.
+aux(Y, _, Y - 1).
+
+f(1,1) :- !.
+f(K, X) :-
+    K1 is K - 1,
+    f(K1, Y),
+    aux(Y, K1, X).
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex42020 ex 1.4
+
+p(1).
+p(2).
+q(1).
+q(2).
+r(1).
+r(2).
+
+s :-
+    p(X),
+    !,
+    q(Y),
+    r(Z).
+
+% X can take the values [1]
+% Y can take the values [1,2]
+% Z can take the values [1,2]
+% 1 1 1 true
+% 1 1 2 true
+% 1 2 1 true
+% 1 2 2 true
+% After each write statement the program will return true (it means there is a solution)
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex42020 ex 2.1
+
+% insertEveryPosition(i i o)
+% insertEveryPosition(E - integer, l - list, R - resulted list)
+% insertEveryPosition(E, l1 l2...ln) = {e} U {l1} U {l2} U ... U {ln}
+%                                    = {l1} U insertEveryPosition(e, l2...ln)
+insertEveryPosition(E, L, [E|L]).
+insertEveryPosition(E, [H|T], [H|R]) :-
+    insertEveryPosition(E, T, R).
+
+% arrangements(i i o)
+% arrangements(K - integer, L - list, R - resulted list)
+% arrangements(K, l1 l2...ln) = {e}, if K = 1
+%                             = arrangements(K, l2...ln)
+%                             = insertEveryPosition(l1, arrangements(K - 1, l2...ln))
+arrangements(1, [H|_], [H]).
+arrangements(K, [_|T], R) :-
+    arrangements(K, T, R).
+arrangements(K, [H|T], R) :-
+    K1 is K - 1,
+    arrangements(K1, T, RN),
+    insertEveryPosition(H, RN, R).
+
+% product(i o)
+% product(l - list, p - integer)
+% product(l1 l2...ln) = 1, if n = 0
+%                     = {l1} * product(l2...ln), otherwise
+product([], 1).
+product([H|T], P) :-
+    product(T, PN),
+    P is PN * H.
+
+oneSolution(L, K, P, RN) :-
+    arrangements(K, L, RN),
+    product(RN, PR),
+    PR =< P.
+
+allSolutions(L, K, P, R) :-
+    findall(X, oneSolution(L, K, P, X), R).

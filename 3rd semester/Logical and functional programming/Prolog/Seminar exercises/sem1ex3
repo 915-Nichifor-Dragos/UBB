@@ -1,0 +1,7 @@
+% Multiply elements of list with a constant value
+
+mmul(_, [], []).
+
+mmul(K, [H|T], [RH|RT]) :-
+    RH is K * H,
+    mmul(K, T, RT).

@@ -1,0 +1,68 @@
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex12020 ex 1.2
+
+aux1(S1, H, H) :-
+    H > 0,
+    S1 < H,
+    !.
+aux1(S1, _, S1).
+
+f([], -1).
+f([H|T], S) :-
+    f(T, S1),
+    aux(S1, H, S).
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex12020 ex 1.4
+
+f([], 0).
+f([H|T], S) :-
+    f(T, S1),
+    S1 is S - H.
+
+% S1 is S - 8 => error because right side operand must be a bound
+%                variable or a value
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex12020 ex 2.1
+
+% insertEveryPosition(i, i, o)
+% insertEveryPosition(E - integer, L - list, R - output list)
+% insertEveryPosition(e, l1 l2...ln) = {e} U {l1} U {l2} U ... U {ln}
+%                                    = {l1} U insertEveryPosition(e, l2...ln)
+insertEveryPosition(E, L, [E|L]).
+insertEveryPosition(E, [H|T], [H|R]) :-
+    insertEveryPosition(E, T, R).
+
+% arrangements(i, o)
+% arrengements(l - list, r - resulted arrangement)
+% arrangements(k, l1 l2...ln) = {l1} if k = 1
+%                             = arrangements(k, l2...ln)
+%                             = insertEveryPosition(l1, arrangements(k-1, l2...ln))
+arrangements(1, [H|_], [H]).
+arrangements(K, [_|T], R) :-
+    arrangements(K, T, R).
+arrangements(K, [H|T], R) :-
+    K1 is K - 1,
+    arrangements(K1, T, RN),
+    insertEveryPosition(H, RN, R).
+
+% product(i, o)
+% product(i, i)
+% product(l - list, p - integer)
+% product(l1 l2...ln) = 1, if n = 0
+%                     = {l1} * product(l2...ln), otherwise
+product([], 1).
+product([H|T], P) :-
+    product(T, P1),
+    P is P1 * H.
+
+% oneSolution(i, i, i, o)
+% oneSolution(l - list, k - integer, Product - integer, RL - output list)
+% oneSolution(l1 l2...ln, k, p, r) = true, if product(arrangements(K, L), Product) is true
+%                                  = false, otherwise
+oneSolution(L, K, Product, RL) :-
+    arrangements(K, L, RL),
+    product(RL, Product).
+
+allSolutions(L, K, P, R) :-
+    findall(X, oneSolution(L, K, P, X), R).

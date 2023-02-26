@@ -1,0 +1,68 @@
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex32020 ex 1.2
+
+aux(H, S1, H + S1) :-
+    H < S1,
+    !.
+
+aux(_, S1, S1 + 2).
+
+f([], 0).
+f([H|T], S) :-
+    f(T, S1),
+    aux(H, S1, S).
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex32020 ex 1.4
+
+p(1).
+p(2).
+
+q(1).
+q(2).
+
+r(1).
+r(2).
+
+s :-
+    !,
+    p(X),
+    q(Y),
+    r(Z).
+
+% X can take the values [1,2]
+% Y can take the values [1,2]
+% Z can take the values [1,2]
+% 1 1 1 true
+% 1 1 2 true
+% 1 2 1 true
+% 1 2 2 true
+% 2 1 1 true
+% 2 1 2 true
+% 2 2 1 true
+% 2 2 2 true
+% After each write statement the program will return true (it means there is a solution)
+
+% ----------------------------------------------------------------------------------------------------------------------------------------------------------
+% ex32020 ex 2.1
+
+subsets([], N, CN, []) :- 
+    CN >= N.
+subsets([_|T], N, CN, R) :-
+    subsets(T, N, CN, R).
+subsets([H|T], N, CN, [H|R]) :-
+    NewCN is CN + 1,
+    subsets(T, N, NewCN, R).
+
+sum([], 0).
+sum([H|T], S) :-
+    sum(T, NS),
+    S is NS + H.
+
+oneSolution(L, N, RP) :-
+    subsets(L, N, 0, RP),
+    sum(RP, S),
+    mod(S, 3) =:= 0.
+
+allSolutions(L, N, R) :-
+    findall(X, oneSolution(L, N, X), R).

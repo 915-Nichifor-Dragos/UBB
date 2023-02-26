@@ -1,0 +1,21 @@
+nrPrim(N, _) :- N > 1, N =< 3.
+nrPrim(N, Div) :- N mod Div =\= 0,
+    Div >= N / 2, !.
+nrPrim(N, Div) :- N mod Div =\= 0,
+    NDiv is Div + 2,
+    nrPrim(N, NDiv).
+
+% Model matematic:
+% primeTwice(l1...ln) =
+% 	[], n = 0
+% 	l1 + l1 + primeTwice(l2...ln), nrPrim(l1, 3) = True,
+% 	l1 + primeTwice(l2...ln), otherwise
+
+% primeTwice(L:list, R:list)
+% flow model: primeTwice(i, o)
+
+primeTwice([], []).
+primeTwice([H|T], [H,H|R]) :- nrPrim(H, 3), !,
+    primeTwice(T, R).
+primeTwice([H|T], [H|R]) :-
+    primeTwice(T, R).

@@ -1,0 +1,12 @@
+% Delete one element E from a list L
+
+deleteElement(_, [], []).
+
+deleteElement(E, [H|T], R) :-
+    H =:= E,
+    R = T.
+
+deleteElement(E, [H|T], R) :-
+    H =\= E,
+    deleteElement(E, T, RT),
+    R = [H|RT].

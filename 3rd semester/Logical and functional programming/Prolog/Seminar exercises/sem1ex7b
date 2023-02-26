@@ -1,0 +1,17 @@
+% Insert a value e in a list from m to m(m >=2)
+
+insertE2([], _, M, _, []) :- M > 1.
+
+insertE2([], E, M, _, [E]) :- M =:= 1.
+
+insertE2(L, E, M, CM, [E|R]) :-
+    M =:= 1,
+    insertE2(L, E, CM, CM, R).
+
+insertE2([H|T], E, M, CM, [H|R]) :-
+    M > 1,
+    M1 is M-1,
+    insertE2(T, E, M1, CM, R).
+
+insertE2Main(L, E, M, R) :-
+    insertE2(L, E, M, M, R).

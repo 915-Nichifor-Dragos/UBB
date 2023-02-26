@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ChooseProgramController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="300.0" prefWidth="366.0" style="-fx-background-color: black; -fx-padding: 15px;">
+         <children>
+            <Label text="The available programs" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <ListView fx:id="programListView" prefHeight="203.0" prefWidth="524.0" style="-fx-background-color: #929ea1; -fx-background-radius: 15px;">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></ListView>
+            <Button fx:id="displayButton" alignment="BASELINE_CENTER" mnemonicParsing="false" onAction="#displayOnButtonClick" prefHeight="26.0" prefWidth="91.0" style="-fx-background-color: #6fa658; -fx-background-radius: 15px;" text="Select" textAlignment="CENTER">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

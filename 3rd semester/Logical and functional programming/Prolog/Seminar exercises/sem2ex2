@@ -1,0 +1,29 @@
+% Remove elements that appear only once in a list.
+
+nrOcc(_, [], 0).
+
+nrOcc(E, [H|T], N) :-
+    H =:= E,
+    nrOcc(E, T, N1),
+    N is N1 + 1.
+
+nrOcc(E, [H|T], N) :-
+    H =\= E,
+    nrOcc(E, T, N).
+
+% ------
+
+remove([], _, []).
+
+remove([H|T], L, R) :-
+    nrOcc(H, L, N),
+    N =:= 1,
+    remove(T, L, R).
+
+remove([H|T], L, [H|R]) :-
+    nrOcc(H, L, N),
+    N =\= 1,
+    remove(T, L, R).
+
+removeMain(L, R) :-
+    remove(L, L, R).

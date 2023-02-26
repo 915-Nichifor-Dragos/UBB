@@ -1,0 +1,55 @@
+% a. Determine the product of a number represented as digits in a list to a given digit.
+
+% toList(R = resulting list, N = the number)
+% toList(o, i)
+
+% toList(R0,R1,...Rn, N) = toList(R0,R1,...Rn,(N mod 10) , (N div 10))
+
+toList([], 0).
+toList([C|R], N) :-
+    C is N mod 10,
+    N1 is integer(N div 10),
+    toList(R, N1).
+
+% append(L = the list, E = the element,  R = result)
+% append(i, i, o)
+
+% append(L0,L1,...Ln , E , R0,R1,...Rm) = append(L1,...Ln , E , R1,...Rm)
+%                                       = when len(L) = 0, R = [E] and we build back the list
+
+append([], E, [E]).
+append([H|T], E, [H|R]) :-
+    append(T,E,R).
+
+
+% reverse(L = input list, R = output list)
+% reverse(i, o)
+
+
+reverse([], []).
+reverse([H|T], R) :-
+    reverse(T, R1),
+    append(R1, H, R).
+
+
+% toNumber(L = list, Nr = resulting number)
+% toNumber(i, o)
+
+% toNumber(L0,L1,...Ln , P , R) = toNumber(L1,...Ln , P * 10 + L0 , R0,R1,...Rm)
+%                                 R = P, when len(L) = 0
+
+toNumber([], R, R).
+toNumber([H|T], P, R) :-
+    P1 is P * 10 + H,
+    toNumber(T, P1, R).
+
+
+% multiply(L = list, R = resulted list, N = number)
+% multiply(i, o, i)
+
+multiply([0], [0], _).
+multiply(L, R, N) :-
+    toNumber(L, 0, AUX),
+    N1 is N * AUX,
+    toList(R1, N1),
+    reverse(R1, R).

@@ -1,0 +1,37 @@
+% a. Write a predicate to transform a list in a set, considering the first occurrence. Eg: [1,2,3,1,2] is transform in [1,2,3].
+
+% removeElement(T = list, E = element(integer), R = list)
+% removeElement(input, input, output)
+
+removeElement([], _, []).
+
+removeElement([H|T], E, R) :-
+    H =:= E,
+    removeElement(T, E, R).
+
+removeElement([H|T], E, R) :-
+    H =\= E,
+    removeElement(T, E, RN),
+    R=[H|RN].
+
+% toSet(T = list, R = list)
+% toSet(input, output)
+
+toSet([], []).
+
+toSet([H|T], [H|R]) :-
+    removeElement(T, H, R1),
+    toSet(R1, R).
+
+
+% removeElement - empty list, if n = 0
+%               - {L1} U removeElement(L2, L3, L4 ... Ln, Element), otherwise
+%               - removeElement(L2, L3, L4 ... Ln, Element) if H = Element
+
+
+% toFind - empty list, if n = 0
+%        - {H} U toFind({L2, ... Ln}), if if H not in list 
+%        - toFind({L2,... Ln}), if H in list
+
+% toSet - empty list, if n = 0
+%       - {H} U toSet({L2, L3 ... Ln}) ; at each step removeElement function removes all the occurences of H in order to get a set
