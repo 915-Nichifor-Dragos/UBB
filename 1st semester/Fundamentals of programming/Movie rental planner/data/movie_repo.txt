@@ -1,0 +1,20 @@
+122;Home Alone;A smart kid left at home tricks and makes fun of the thieves that try to rob him;comedy
+157;Taken;A desperate father does anything to find his kidnapped daughter in Paris;action
+168;Hunger Games;Katniss Everdeen voluntarily takes her younger sisters place in the Hunger Games;survival
+227;Lord of the Rings;A very intriguing SF movie, presenting a world full of adventure;science fiction
+231;Hard to kill;An action movie full of badass scenes, with only well known actors in play;action
+233;Tomb Rider;Lara Croft explores the island on which her father disappeared;action
+279;50 first dates;Henry Roth is a man afraid of commitment until he meets the beautiful Lucy;romance
+286;Titanic;A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the Titanic;romance
+297;Hercules;Hercules, the Son of Zeus is the most beloved warrior in Antique Greece;action
+378;How I met your mother;This show presents how Ted found his loved one among the other adventures he has been through;comedy
+394;Hobbs & Shaw;The Fast and Furious crew fight a terrorist that prepares a cybernetic attack;action
+511;Zohan;An Israeli Special Forces Soldier fakes his death so he can re-emerge in New York City as a hair stylist.;comedy
+534;Friends;An awesome comedy that can be watched with the family;comedy
+562;Big Daddy;A lazy law school grad adopts a kid to impress his girlfriend, but everything does not go as planned;comedy
+567;Hard to kill 2;The part 2 of the original movie Hard to kill;action
+596;Uncut Gems;A fast-talking New York City jeweler risks everything in hope of staying afloat and alive.;action
+613;Prison Break;Michael Scofield saves his brother from the death penalty and proves his innocence;action
+696;Boyka: Undisputed IV;Boyka fights in prison, beating every enemy he faces;action
+740;Five feet apart;A pair of teenagers with cystic fibrosis meet in a hospital and fall in love;romance
+860;Paul Blart - Mall Cop;It is up to a mild-mannered security guard to save the day.;comedy
