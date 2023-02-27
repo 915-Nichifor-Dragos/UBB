@@ -1,6 +1,4 @@
-# 💻 Assignment 05
 ## Requirements
-
 - Use feature-driven development
 - The program must provide a menu-driven console user interface.
 - Use classes to represent the following:
