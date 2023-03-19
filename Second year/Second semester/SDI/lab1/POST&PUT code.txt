@@ -1,0 +1,7 @@
+{
+    "brand": "Mercedes",
+    "motorization": "diesel",
+    "gearBox": "automatic",
+    "cilindricalCapacity": 3000,
+    "horsePower": 243
+}
